@@ -1,0 +1,28 @@
+{
+    "name": "muneebkh2/laravel-fcm-notifications",
+    "description": "Laravel package for sending push notifications using Firebase Cloud Messaging (FCM).",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Muneebkh2\\LaravelFcmNotifications\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Muneebkh2\\LaravelFcmNotifications\\FCMServiceProvider"
+            ]
+        }
+    },
+    "authors": [
+        {
+            "name": "Muneeb Ur Rehman",
+            "email": "muneebkh5@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "google/auth": "^1.42"
+    }
+}
