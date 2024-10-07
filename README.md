@@ -7,13 +7,13 @@ A Laravel package for sending push notifications using Firebase Cloud Messaging 
 You can install the package via Composer:
 
 ```bash
-composer require myvendor/laravel-fcm-notifications
+composer require muneebkh2/laravel-fcm-notifications
 ```
 
 ### Publish the Configuration
 The configuration file will be automatically published. If you need to manually publish it, you can run:
 ```bash
-php artisan vendor:publish --provider="MyVendor\LaravelFcmNotifications\FCMServiceProvider" --tag="config"
+php artisan vendor:publish --provider="Muneebkh2\LaravelFcmNotifications\FCMServiceProvider" --tag="config"
 ```
 
 ### Configuration
