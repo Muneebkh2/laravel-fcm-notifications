@@ -34,3 +34,29 @@ LaravelFCM::sendNotification($deviceToken, 'Test Title', 'Test Body');
 
 ```
 
+#### Example Controller
+Here’s an example of how you might use the package in a controller:
+
+```php
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use Muneebkh2\LaravelFcmNotifications\Facades\LaravelFCM;
+
+class NotificationController extends Controller
+{
+    public function sendPushNotification(Request $request)
+    {
+        $deviceToken = $request->input('device_token');
+        $title = $request->input('title');
+        $body = $request->input('body');
+
+        LaravelFCM::sendNotification($deviceToken, $title, $body);
+
+        return response()->json(['message' => 'Notification sent successfully']);
+    }
+}
+
+```

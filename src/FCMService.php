@@ -24,11 +24,11 @@ class FCMService
     /**
      * @throws \Exception
      */
-    public function sendNotification($deviceToken, $title, $body)
+    public function sendNotification($deviceToken, $title, $body, $data = [])
     {
         $url = $this->FCMConfig->getFCMUrl();
         $accessToken = $this->FCMTokenService->getAccessToken();
-        $requestBody = $this->FCMRequestBuilder->setDeviceToken($deviceToken)->setNotification($title, $body)->build();
+        $requestBody = $this->FCMRequestBuilder->setDeviceToken($deviceToken)->setNotification($title, $body)->setNotificationData($data)->build();
 
         $response = Http::withToken($accessToken)
             ->post($url, $requestBody);

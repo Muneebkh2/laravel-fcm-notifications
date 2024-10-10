@@ -24,6 +24,14 @@ class FCMRequestBodyBuilder
         return $this;
     }
 
+    public function setNotificationData(array $data): self
+    {
+        if(!empty($data))
+            $this->message['data'] = $data;
+
+        return $this;
+    }
+
     public function build(): array
     {
         return ['message' => $this->message];
