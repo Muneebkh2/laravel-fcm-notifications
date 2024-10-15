@@ -33,7 +33,7 @@ class FCMTokenService
         $config = new FCMConfig();
         $credentials = new ServiceAccountCredentials(
             $config->getScopes(),
-            $config->getCredentialsFile()
+            base_path($config->getCredentialsFile())
         );
         $authToken = $credentials->fetchAuthToken();
 
