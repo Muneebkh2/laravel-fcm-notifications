@@ -40,6 +40,7 @@ class FCMTokenService
         $authToken = $credentials->fetchAuthToken();
 
         if (!isset($authToken['access_token'])) {
+            Log::error('FCM access token generation failed', [$authToken]);
             throw new \Exception("Failed to generate access token.");
         }
 
