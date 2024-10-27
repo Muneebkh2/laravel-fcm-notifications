@@ -32,7 +32,7 @@ class FCMTokenService
     private function generateAccessToken(): string
     {
         $config = new FCMConfig();
-        Log::debug('FCM config file path', ['path' => $config->getCredentialsFile(), 'base_path' => base_path($config->getCredentialsFile())])
+        Log::debug('FCM config file path', ['path' => $config->getCredentialsFile(), 'base_path' => base_path($config->getCredentialsFile())]);
         $credentials = new ServiceAccountCredentials(
             $config->getScopes(),
             base_path($config->getCredentialsFile())
