@@ -2,7 +2,6 @@
 
 namespace Muneebkh2\LaravelFcmNotifications\Utility;
 
-use Illuminate\Support\Facades\Log;
 use Google\Auth\Credentials\ServiceAccountCredentials;
 
 class FCMTokenService
@@ -32,7 +31,6 @@ class FCMTokenService
     private function generateAccessToken(): string
     {
         $config = new FCMConfig();
-        Log::debug('FCM config file path', ['path' => $config->getCredentialsFile(), 'base_path' => base_path($config->getCredentialsFile())]);
         $credentials = new ServiceAccountCredentials(
             $config->getScopes(),
             base_path($config->getCredentialsFile())
@@ -40,7 +38,6 @@ class FCMTokenService
         $authToken = $credentials->fetchAuthToken();
 
         if (!isset($authToken['access_token'])) {
-            Log::error('FCM access token generation failed', [$authToken]);
             throw new \Exception("Failed to generate access token.");
         }
 
